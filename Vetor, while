@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+    int main(){
+    	setlocale(LC_ALL,"");
+		int nu[4];
+    	int i,soma,media;
+    	
+    	printf("Digite a disgraça\n");
+    	
+    	for (i=0;i<4;i++){
+    		printf("nota %i: ",i+1);
+    		scanf("%i",&nu[i]);
+    	    soma+=nu[i];
+		}
+		system ("cls");
+		for (i=0;i<4;i++){
+		    printf("nota %i: %i\n",i+1,nu[i]);
+		    
+		}
+		media=soma/i;
+		 printf("Media: %i",media);
+	}			
