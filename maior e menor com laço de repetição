@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+    int main(){
+    	setlocale(LC_ALL,"");
+		int vetor[5];
+    	int i,numero,maiornumero=0,menornumero=999,nu4,nu5;
+    	
+    	    printf("Digite a pica:\n ");
+    	    	fflush(stdin);
+    	    	
+    	    for (i=0;i<5;i++){
+    	    printf("Nota %i: ",i+1);
+    	    scanf("%i",&vetor[i]);
+    	    
+    	    if (vetor[i]>maiornumero){
+    	    maiornumero=vetor[i];
+}
+
+            if (vetor[i]<menornumero){
+            menornumero=vetor[i];
+}
+}
+            printf("Maior numero: %i\n",maiornumero);
+            printf("Menor numero: %i",menornumero);
+}
