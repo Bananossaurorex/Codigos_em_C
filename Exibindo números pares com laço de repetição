@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+        int main(){
+        int i,numero,vetor[6],pares=0,impares,contador;
+		setlocale(LC_ALL,"");
+		 
+        for(i=0;i<6;i++){
+    printf("Digite o %i número desejado: ",i+1);
+        scanf("%i",&vetor[i]);
+
+        if (vetor[i]%2==0){
+        pares++;
+}
+} system("cls");
+    printf("\n==Exibindo dados==\n");
+    
+      for(i=0;i<6;i++){
+       if (vetor[i]%2==0)  //Mostrando somente os pares
+	printf(" %i numero par: %i \n",i+1,vetor[i]);  //Exibindo todos os números
+	
+        
+}
+    printf("Quantidade de pares: %i",pares);
+return 0;
+}
