@@ -6,7 +6,7 @@
 		int vetor[5];
     	int i,numero,maiornumero=0,menornumero=999,nu4,nu5;
     	
-    	    printf("Digite a pica:\n ");
+    	    printf("Digite o numero:\n ");
     	    	fflush(stdin);
     	    	
     	    for (i=0;i<5;i++){
