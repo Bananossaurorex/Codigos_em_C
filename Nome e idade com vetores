@@ -1,0 +1,27 @@
+#include <locale.h>
+#include <ctype.h>
+        void cabecalho(){
+	    	fflush(stdin);
+	    	system("cls");
+	    	printf("==Senai==\n");
+		}
+		
+		int main(){	
+		setlocale(LC_ALL,"");
+        int numero,vetor[5],idade[2],i;
+        char nome[2][200];
+        nome==toupper(nome);
+			
+	    for(i=0;i<2;i++){	    
+	    	cabecalho();
+		printf("Digite o nome da %i pessoa: ",i+1);
+		scanf("%s",&nome[i]);
+		printf("Digite a idade da %i pessoa: ",i+1);
+		scanf("%i",&idade[i]);
+}
+	    
+        for(i=0;i<2;i++){
+		printf("\n%i - %s de %i anos ",i+1,nome[i],idade[i]);
+}
+return 0;
+}
