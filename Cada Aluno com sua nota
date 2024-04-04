@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+#define Qalunos 4
+#define nota 3
+        void cab(){
+        	system("cls");
+        	fflush(stdin);
+		}
+        int main(){
+        setlocale(LC_ALL,"");
+        
+    int  notas[Qalunos][nota],i,j,soma=0,media[4];
+    char alunos[Qalunos][200];
+    
+    for (i=0;i<Qalunos;i++){
+    printf("Digite o nome do %iº aluno: ",i+1);
+    scanf("%s",&alunos[i]);
+    for (j=0;j<nota;j++){
+    printf("Digite sua %iº nota: ",j+1);
+    scanf("%i",&notas[i][j]);
+    
+    soma+=notas[i][j];
+}
+    media[i]=soma/j;
+    soma=0;
+}
+       cab();
+    for (i=0;i<Qalunos;i++){
+	printf("%i Aluno: %s\n",i+1,alunos[i]);
+    for (j=0;j<nota;j++){
+    printf("%iº Nota: %i\n",j+1,notas[i][j]);
+}
+    printf("Media: %i\n",media[i]);
+}
+}
