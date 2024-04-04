@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#define  Qmaterias 2
+#define  Qnotas    3
+    int main(){
+    setlocale(LC_ALL,"");
+	//declarando variaveis
+	char materia[Qmaterias][200];
+	int i,j,nota[Qmaterias][Qnotas];
+	
+	for(i=0;i<Qmaterias;i++){
+	printf("Digite a %iª materia: ",i+1);
+	scanf("%s",&materia[i]);
+		for(j=0;j<Qnotas;j++){
+	printf("Digite a %iª nota: ",j+1);
+	scanf("%i",&nota[i][j]);
+}	   	
+}
+}
