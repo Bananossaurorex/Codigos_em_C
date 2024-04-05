@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#define Q 3
+        int main(){
+        int i,numero,vetor[Q],pares=0,impares=0,contador;
+		setlocale(LC_ALL,"");
+		 
+        for(i=0;i<Q;i++){
+        printf("Digite o %i número desejado: ",i+1);
+        scanf("%i",&vetor[i]);
+
+        if (vetor[i]%2==0){
+        pares++;
+}
+        else
+        impares++;        
+}
+        system("cls");
+        printf("\n==Exibindo dados==\n");
+    
+        for(i=0;i<Q;i++){
+        if (vetor[i]%2==0){ //Mostrando somente os pares
+	    printf("%i numero par: %i \n",i+1,vetor[i]);  //Exibindo todos os números
+	
+}
+        else 
+        printf("%i numero impar: %i\n",i+1,vetor[i]);  //Mostrando somente os impares
+}
+
+        printf("Quantidade de pares: %i\n",pares);   //Mostrando a QUANTIDADE de pares
+        printf("Quantidade de impares: %i",impares); //Mostrando a QUANTIDADE de impares
+return 0;
+}
