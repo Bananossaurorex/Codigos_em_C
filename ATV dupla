@@ -6,7 +6,7 @@
 
         int main(){
         setlocale(LC_ALL,"");
-        int num[Q][P],i,j,somatotal=0,media[Q],peso[3]={3,3,4};
+        int nota[Q][P],i,j,soma=0,somatotal=0,media[Q],peso[3]={3,3,4};
         char materia[Q][200];
     
         
@@ -16,19 +16,20 @@
 	
 	for (j=0;j<P;j++){
 	printf("Sua nota: ");
-	scanf("%i",&num[i][j]);
-	somatotal=(num[i][j])*peso[j];
+	scanf("%i",&nota[i][j]);
+	
+	soma=nota[i][j]*peso[j];
+	somatotal+=soma;
 
 }		
-    media[i]=somatotal;
-    printf("Média: %i\n",media[i]);
+    media[i]=somatotal/10;
     somatotal=0;
+	system("cls");
+}
+	for (i=0;i<Q;i++){
+		printf("\n%i-Materia: %s\n",i+1,materia[i]);
+	for (j=0;j<P;j++){
+	printf("%i-Nota : %i peso %i\n",j+1,nota[i][j],peso[j]);
+}	printf("Média: %i\n",media[i]);
 }
 }
-    //system("cls");
-    //for (i=0;i<Q;i++){
-	//printf("Matéria: %s\n",materia[i]);
-    //for (j=0;j<P;j++){
-	//printf("%i Numero: %i\n",j+1,num[i][j]);
-
-
