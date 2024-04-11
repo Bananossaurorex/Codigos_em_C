@@ -23,7 +23,6 @@
 
 }		
     media[i]=somatotal/10;
-    somatotal=0;
 	system("cls");
 }
 	for (i=0;i<Q;i++){
