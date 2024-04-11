@@ -10,24 +10,22 @@
         char materia[Q][200];
         int i,j;
     
-    do {
 	for (i=0;i<Q;i++){
 	printf("Digite a matéria: ");
 	scanf("%s",&materia[i]);
 	
 	for (j=0;j<P;j++){
+		do{
 	printf("Sua nota: ");
 	scanf("%f",&nota[i][j]);
 	
 	soma=nota[i][j]*peso[j];
-	somatotal+=soma;
-}		
+	somatotal+=soma;		
     media[i]=somatotal/10;
     somatotal=0;
-	system("cls");
+}   while (nota[i][j]>10 || nota[i][j]<0);
 }
-}  while (nota[i][j]>10  && media>10);
-
+}
 
 	for (i=0;i<Q;i++){
 		printf("\n%i-Materia: %s\n",i+1,materia[i]);
