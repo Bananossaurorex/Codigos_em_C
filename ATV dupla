@@ -6,29 +6,33 @@
 
         int main(){
         setlocale(LC_ALL,"");
-        int nota[Q][P],i,j,soma=0,somatotal=0,media[Q],peso[3]={3,3,4};
+        float nota[Q][P],soma=0,somatotal=0,media[Q],peso[3]={3,3,4};
         char materia[Q][200];
+        int i,j;
     
-        
+    do {
 	for (i=0;i<Q;i++){
 	printf("Digite a matéria: ");
 	scanf("%s",&materia[i]);
 	
 	for (j=0;j<P;j++){
 	printf("Sua nota: ");
-	scanf("%i",&nota[i][j]);
+	scanf("%f",&nota[i][j]);
 	
 	soma=nota[i][j]*peso[j];
 	somatotal+=soma;
-
 }		
     media[i]=somatotal/10;
+    somatotal=0;
 	system("cls");
 }
+}  while (nota[i][j]>10  && media>10);
+
+
 	for (i=0;i<Q;i++){
 		printf("\n%i-Materia: %s\n",i+1,materia[i]);
 	for (j=0;j<P;j++){
-	printf("%i-Nota : %i peso %i\n",j+1,nota[i][j],peso[j]);
-}	printf("Média: %i\n",media[i]);
+	printf("%i-Nota : %.2f peso %.2f\n",j+1,nota[i][j],peso[j]);
+}	printf("Média: %.2f\n",media[i]);
 }
 }
