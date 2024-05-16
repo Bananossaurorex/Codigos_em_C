@@ -6,7 +6,7 @@
 		int nu[4];
     	int i,soma,media;
     	
-    	printf("Digite a disgraça\n");
+    	printf("Digite \n");
     	
     	for (i=0;i<4;i++){
     		printf("nota %i: ",i+1);
