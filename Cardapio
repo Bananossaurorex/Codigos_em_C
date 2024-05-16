@@ -5,7 +5,7 @@
 	setlocale(LC_ALL,"");
 	int opcao;
 	int pedidomais;
-	float somatotal=0;
+	float somatotal=0,Qhamburguer=0,Qxburguer=0,Qfritas=0,Qrefrigerante=0,Qmilkshake=0;
 	
 	do{
 	system("cls");
@@ -20,32 +20,42 @@
 	switch (opcao){
 	case 1:
 	system("cls");
-	printf("Hamburguer\n");
-	somatotal=somatotal+12;
+	printf("Quantos Hamburguers você deseja?\n");
+	scanf("%f",&Qhamburguer);
+	Qhamburguer=Qhamburguer*12;
+	somatotal=somatotal+Qhamburguer;
 	break;
 	
 	case 2:
 	system("cls");
-	printf("XBurguer\n");
-	somatotal=somatotal+15;
+	printf("Quantos XBurguers você deseja?\n");
+	scanf("%f",&Qxburguer);
+	Qxburguer=Qxburguer*15;
+	somatotal+=Qxburguer;
 	break;
 	
 	case 3:
 	system("cls");	
-	printf("Fritas\n");
-	somatotal+=8;
+	printf("Quantas fritas você deseja?\n");
+	scanf("%f",&Qfritas);
+	Qfritas=Qfritas*8;
+	somatotal+=Qfritas;
 	break;
 	
 	case 4:
 	system("cls");	
-	printf("Refrigerante\n");
-	somatotal+=5;
+	printf("Quantos refrigerantes você deseja?\n");
+	scanf("%f",&Qrefrigerante);
+	Qrefrigerante=Qrefrigerante*5;	
+	somatotal+=Qrefrigerante;
 	break;
 	
 	case 5:
 	system("cls");	
-	printf("Milk Shake\n");
-	somatotal+=9.50;
+	printf("Quantos refrigerantes você deseja?\n");
+	scanf("%f",&Qmilkshake);
+	Qmilkshake=Qmilkshake*9.50;
+	somatotal+=Qmilkshake;
 	break;
 }
 	printf("Deseja pedir mais alguma coisa? (1=Sim/2=Não) ");
