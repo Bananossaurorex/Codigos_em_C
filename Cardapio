@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+	int main(){
+	setlocale(LC_ALL,"");
+	int opcao;
+	int pedidomais;
+	float somatotal=0;
+	
+	do{
+	system("cls");
+	printf("--Escolha uma opção--\n");
+	printf("1-Hamburguer / $12,00\n");
+	printf("2-Xburguer / $15,00\n");
+	printf("3-Fritas / $8,00\n");
+	printf("4-Refrigerante / $5,00\n");
+	printf("5-Milk Shake / $9,50\n");
+	
+	scanf("%i",&opcao);
+	switch (opcao){
+	case 1:
+	system("cls");
+	printf("Hamburguer\n");
+	somatotal=somatotal+12;
+	break;
+	
+	case 2:
+	system("cls");
+	printf("XBurguer\n");
+	somatotal=somatotal+15;
+	break;
+	
+	case 3:
+	system("cls");	
+	printf("Fritas\n");
+	somatotal+=8;
+	break;
+	
+	case 4:
+	system("cls");	
+	printf("Refrigerante\n");
+	somatotal+=5;
+	break;
+	
+	case 5:
+	system("cls");	
+	printf("Milk Shake\n");
+	somatotal+=9.50;
+	break;
+}
+	printf("Deseja pedir mais alguma coisa? (1=Sim/2=Não) ");
+	scanf("%i",&pedidomais);	
+}	while(pedidomais == 1);
+
+	printf("Soma Total: %0.2f",somatotal);
+}
