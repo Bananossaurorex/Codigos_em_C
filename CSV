@@ -1,0 +1,57 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+typedef struct{
+    int i,resposta,opcao,produto,produtos,contador=0;
+    char nomeproduto;
+}
+
+Produto * produto = NULL;
+int main(){
+    FILE * file = fopen ("loja.csv","r");
+    if (file){
+        while(1){
+            produto = realloc(produtos,(contadorprodutos+1)*sizeof(produto));
+            if scanf(file,%d,%49[^,],%99[^,],%f\n
+                    $produtos[contadorprodutos].id,
+                    $produtos[contadorprodutos].marca,
+                    $produtos[contadorprodutos].preco,
+                    ){
+                    break;
+                    }
+                    contadorprodutos++;
+                    
+        }
+                    fclose file
+    }
+    
+    setlocale(LC_ALL,"");
+    
+    printf("Digite o nome do produto a ser cadastrado: ");
+        scanf("%s",&nomeproduto);
+    
+    do{
+        contador++;
+        if (contador = 1){
+    printf("--Selecione a opção desejada--\n");
+    printf("1. Criar produto\n");
+    printf("2. Editar produto\n");
+    printf("3. Excluir produto\n");
+    printf("4. Exibir produtos\n");
+    printf("5. Sair\n");
+    scanf("%i",&opcao);
+    
+    
+    switch(opcao){
+        case 1:
+        printf("Digite o nome do produto a ser cadastrado: ");
+        scanf("%s",&produto);
+        break;
+    }
+    
+    }}while(opcao != 4);
+
+    return 0;
+}
