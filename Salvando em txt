@@ -4,8 +4,8 @@
 
 int main(){
 	FILE * file;
-	int i,resposta,opcao,produto,produtos,contador=0;
-    char nomeproduto[200];
+	int i,j,resposta,opcao,produto,produtos,contador=0;
+    char nomeproduto[5][200];
     setlocale(LC_ALL," "); 
 	    
     file = fopen("C:\\Users\\aluno.den\\Desktop\\loja.txt","w");
@@ -14,15 +14,15 @@ int main(){
 	if (file==NULL){
 	printf("Erro na abertura do programa");
 }
-    printf("Digite o nome do produto a ser cadastrado: ");
-	scanf(" %[^\n]",nomeproduto);
+    //printf("Digite o nome do produto a ser cadastrado: ");
+	//scanf(" %[^\n]",nomeproduto[contador]);
 //Escrevendo a variavel no arquivo txt
-	fprintf(file,"%s\n",nomeproduto);
+	//fprintf(file,"%s\n",nomeproduto[contador]);
 	
     
     do{
         contador++;
-        if (contador = 1){
+        i++;
     printf("--Selecione a opção desejada--\n");
     printf("1. Criar produto\n");
     printf("2. Editar produto\n");
@@ -34,19 +34,36 @@ int main(){
     
     switch(opcao){
         case 1:
-        printf("Digite o nome do produto a ser cadastrado: ");
-        scanf(" %[^\n]",nomeproduto);
-        fprintf(file,"%s \n",nomeproduto);
+        printf("Digite o nome do produto %i a ser cadastrado: ",i);
+        scanf(" %[^\n]",nomeproduto[i]);
+        fprintf(file,"%s \n",nomeproduto[i]);
         break;
         
         case 2:
-        	
+       if (contador > 0) {
+                    int index;
+                    printf("Digite o índice do produto a ser editado (1 a %d): ", contador);
+                    scanf("%d", &index);
+                    getchar(); // Limpa o buffer
+
+                    if (index >= 1 && index <= contador) {
+                        printf("Digite o novo nome do produto: ");
+                        scanf(" %[^\n]", nomeproduto[index]);
+
+                        // Reescreve o arquivo
+                        file = fopen("C:\\Users\\aluno.den\\Desktop\\loja.txt", "w");
+                        if (file) {
+                            for (j = 0; j < contador; j++) {
+                                fprintf(file, "%s\n", nomeproduto[j]);
+                            }
+                            fclose(file);
+                        }
+						}
+					}
         break;
     }
-    
-    }}while(opcao != 4);
-
-//Fechando o arquivo
     fclose(file);
+    }while(opcao != 4);
+//Fechando o arquivo
     return 0;
 }
