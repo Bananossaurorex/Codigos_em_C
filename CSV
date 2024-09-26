@@ -1,36 +1,24 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
 
-typedef struct{
-    int i,resposta,opcao,produto,produtos,contador=0;
-    char nomeproduto;
-}
-
-Produto * produto = NULL;
 int main(){
-    FILE * file = fopen ("loja.csv","r");
-    if (file){
-        while(1){
-            produto = realloc(produtos,(contadorprodutos+1)*sizeof(produto));
-            if scanf(file,%d,%49[^,],%99[^,],%f\n
-                    $produtos[contadorprodutos].id,
-                    $produtos[contadorprodutos].marca,
-                    $produtos[contadorprodutos].preco,
-                    ){
-                    break;
-                    }
-                    contadorprodutos++;
-                    
-        }
-                    fclose file
-    }
-    
-    setlocale(LC_ALL,"");
-    
+	FILE * file;
+	int i,resposta,opcao,produto,produtos,contador=0;
+    char nomeproduto[200];
+    setlocale(LC_ALL," "); 
+	    
+    file = fopen("C:\\Users\\aluno.den\\Desktop\\loja.txt","w");
+
+//Testando se o arquivo foi cirado
+	if (file==NULL){
+	printf("Erro na abertura do programa");
+}
     printf("Digite o nome do produto a ser cadastrado: ");
-        scanf("%s",&nomeproduto);
+	scanf(" %[^\n]",nomeproduto);
+//Escrevendo a variavel no arquivo txt
+	fprintf(file,"%s\n",nomeproduto);
+	
     
     do{
         contador++;
@@ -47,11 +35,18 @@ int main(){
     switch(opcao){
         case 1:
         printf("Digite o nome do produto a ser cadastrado: ");
-        scanf("%s",&produto);
+        scanf(" %[^\n]",nomeproduto);
+        fprintf(file,"%s \n",nomeproduto);
+        break;
+        
+        case 2:
+        	
         break;
     }
     
     }}while(opcao != 4);
 
+//Fechando o arquivo
+    fclose(file);
     return 0;
 }
