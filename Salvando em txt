@@ -4,7 +4,7 @@
 
 int main(){
 	FILE * file;
-	int k, i, j;
+	int k, i, j, l;
 	int resposta,opcao,produto,produtos,contador=0,contadorProduto=0;
     char nomeproduto[5][200];
     setlocale(LC_ALL,""); 
@@ -35,7 +35,12 @@ int main(){
         case 1:
         printf("Digite o nome do produto %i a ser cadastrado: ",contadorProduto+1);
         scanf(" %[^\n]",nomeproduto[contadorProduto]);
-        fprintf(file,"%s \n",nomeproduto[contadorProduto]);
+        file = fopen("C:\\Users\\aluno.den\\Desktop\\loja.txt", "w");
+                        if (file) {
+                            for (l = 0; l < contador; l++) {
+                                fprintf(file, "%s\n", nomeproduto[l]);
+                            }
+                        }
     	contadorProduto++;
         break;
     
