@@ -4,9 +4,10 @@
 
 int main(){
 	FILE * file;
-	int i,j,resposta,opcao,produto,produtos,contador=0;
+	int k, i, j;
+	int resposta,opcao,produto,produtos,contador=0,contadorProduto=0;
     char nomeproduto[5][200];
-    setlocale(LC_ALL," "); 
+    setlocale(LC_ALL,""); 
 	    
     file = fopen("C:\\Users\\aluno.den\\Desktop\\loja.txt","w");
 
@@ -22,33 +23,32 @@ int main(){
     
     do{
         contador++;
-        i++;
     printf("--Selecione a opção desejada--\n");
     printf("1. Criar produto\n");
     printf("2. Editar produto\n");
-    printf("3. Excluir produto\n");
-    printf("4. Exibir produtos\n");
-    printf("5. Sair\n");
+    printf("3. Exibir produtos\n");
+    printf("4. Sair\n");
     scanf("%i",&opcao);
     
     
     switch(opcao){
         case 1:
-        printf("Digite o nome do produto %i a ser cadastrado: ",i);
-        scanf(" %[^\n]",nomeproduto[i]);
-        fprintf(file,"%s \n",nomeproduto[i]);
+        printf("Digite o nome do produto %i a ser cadastrado: ",contadorProduto+1);
+        scanf(" %[^\n]",nomeproduto[contadorProduto]);
+        fprintf(file,"%s \n",nomeproduto[contadorProduto]);
+    	contadorProduto++;
         break;
-        
+    
         case 2:
-       if (contador > 0) {
+      		if (contadorProduto > 0) {
                     int index;
-                    printf("Digite o índice do produto a ser editado (1 a %d): ", contador);
+                    printf("Digite o índice do produto a ser editado (1 a %d): ", contadorProduto);
                     scanf("%d", &index);
                     getchar(); // Limpa o buffer
 
-                    if (index >= 1 && index <= contador) {
+                    if (index >= 1 && index <= contadorProduto) {
                         printf("Digite o novo nome do produto: ");
-                        scanf(" %[^\n]", nomeproduto[index]);
+                        scanf("%[^\n]", nomeproduto[index - 1]);
 
                         // Reescreve o arquivo
                         file = fopen("C:\\Users\\aluno.den\\Desktop\\loja.txt", "w");
@@ -56,11 +56,21 @@ int main(){
                             for (j = 0; j < contador; j++) {
                                 fprintf(file, "%s\n", nomeproduto[j]);
                             }
-                            fclose(file);
                         }
 						}
 					}
         break;
+        
+    	case 3:
+    		if (contadorProduto > 0) {
+        printf("Produtos cadastrados:\n");
+        for (k = 0; k < contadorProduto; k++) {
+            printf("%d. %s\n", k + 1, nomeproduto[k]);
+        }
+    } else {
+        printf("Nenhum produto cadastrado.\n");
+    }
+    	break;
     }
     fclose(file);
     }while(opcao != 4);
